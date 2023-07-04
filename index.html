@@ -19,6 +19,42 @@
 <body>  
   <div id="container">
     <script type="text/javascript" id="WolframAlphaScript160c88652d47d0be60bfbfed25111412" src="//www.wolframalpha.com/widget/widget.jsp?id=160c88652d47d0be60bfbfed25111412"></script> 
-  </div>
+    
+    <div id="calculator">    
+      <input type="text" id="num1">
+      <input type="text" id="num2"> 
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>  
+        <option value="*">*</option>
+        <option value="/">/</option>  
+      </select>   
+      <button id="calculate">Calculate</button>    
+      <div id="result"></div>
+    </div>
+    
+    <script>    
+      document.getElementById("calculate").addEventListener("click", function() {
+        const num1 = parseFloat(document.getElementById("num1").value); 
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const operator = document.getElementById("operator").value;
+        
+        let result;
+        
+        if (operator == "+") {
+          result = num1 + num2;
+        } else if (operator == "-") {
+          result = num1 - num2;        
+        } else if (operator == "*") {
+          result = num1 * num2;          
+        } else {
+          result = num1 / num2;
+        }
+        
+        document.getElementById("result").innerHTML = `Result: ${result}`;
+      });     
+    </script>
+    
+  </div> 
 </body>
 </html>
