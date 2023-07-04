@@ -20,41 +20,45 @@
   <div id="container">
     <script type="text/javascript" id="WolframAlphaScript160c88652d47d0be60bfbfed25111412" src="//www.wolframalpha.com/widget/widget.jsp?id=160c88652d47d0be60bfbfed25111412"></script> 
     
-    <div id="calculator">    
-      <input type="text" id="num1">
-      <input type="text" id="num2"> 
-      <select id="operator">
-        <option value="+">+</option>
-        <option value="-">-</option>  
-        <option value="*">*</option>
-        <option value="/">/</option>  
-      </select>   
-      <button id="calculate">Calculate</button>    
-      <div id="result"></div>
+   <h1>Calculator Design Using HTML Layout</h1>
+    <div class="container">
+      <div class="header">Calculator</div>
+      <input type="text" class="result">
+      <div class="first-row">
+        <input type="button" name="" value="&radic;" class="global">
+        <input type="button" name="" value="(" class="global">
+        <input type="button" name="" value=")" class="global">
+        <input type="button" name="" value="%" class="global">
+      </div>
+      <div class="second-row">
+        <input type="button" name="" value="7" class="global">
+        <input type="button" name="" value="8" class="global">
+        <input type="button" name="" value="9" class="global">
+        <input type="button" name="" value="/" class="global">
+      </div>
+      <div class="third-row">
+        <input type="button" name="" value="4" class="global">
+        <input type="button" name="" value="5" class="global">
+        <input type="button" name="" value="6" class="global">
+        <input type="button" name="" value="X" class="global">
+      </div>
+      <div class="fourth-row">
+        <input type="button" name="" value="1" class="global">
+        <input type="button" name="" value="2" class="global">
+        <input type="button" name="" value="3" class="global">
+        <input type="button" name="" value="-" class="global">
+      </div>
+      <div class="conflict">
+        <div class="left">
+          <input type="button" name="" value="0" class=" big">
+          <input type="button" name="" value="." class=" small">
+          <input type="button" name="" value="Del" class=" red small white-text top-margin">
+          <input type="button" name="" value="=" class=" green white-text big top-margin">
+        </div>
+        <div class="right">
+          <input type="button" name="" value="+" class="global grey plus">
+        </div>
+      </div>
     </div>
-    
-    <script>    
-      document.getElementById("calculate").addEventListener("click", function() {
-        const num1 = parseFloat(document.getElementById("num1").value); 
-        const num2 = parseFloat(document.getElementById("num2").value);
-        const operator = document.getElementById("operator").value;
-        
-        let result;
-        
-        if (operator == "+") {
-          result = num1 + num2;
-        } else if (operator == "-") {
-          result = num1 - num2;        
-        } else if (operator == "*") {
-          result = num1 * num2;          
-        } else {
-          result = num1 / num2;
-        }
-        
-        document.getElementById("result").innerHTML = `Result: ${result}`;
-      });     
-    </script>
-    
-  </div> 
 </body>
 </html>
