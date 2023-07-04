@@ -1,41 +1,67 @@
 <link rel="stylesheet" href="main.css">
+
 <h1>Calculator Design Using HTML Layout</h1>
-    <div class="container">
-      <div class="header">Calculator</div>
-      <input type="text" class="result">
-      <div class="first-row">
-        <input type="button" name="" value="&radic;" class="global">
-        <input type="button" name="" value="(" class="global">
-        <input type="button" name="" value=")" class="global">
-        <input type="button" name="" value="%" class="global">
-      </div>
-      <div class="second-row">
-        <input type="button" name="" value="7" class="global">
-        <input type="button" name="" value="8" class="global">
-        <input type="button" name="" value="9" class="global">
-        <input type="button" name="" value="/" class="global">
-      </div>
-      <div class="third-row">
-        <input type="button" name="" value="4" class="global">
-        <input type="button" name="" value="5" class="global">
-        <input type="button" name="" value="6" class="global">
-        <input type="button" name="" value="X" class="global">
-      </div>
-      <div class="fourth-row">
-        <input type="button" name="" value="1" class="global">
-        <input type="button" name="" value="2" class="global">
-        <input type="button" name="" value="3" class="global">
-        <input type="button" name="" value="-" class="global">
-      </div>
-      <div class="conflict">
-        <div class="left">
-          <input type="button" name="" value="0" class=" big">
-          <input type="button" name="" value="." class=" small">
-          <input type="button" name="" value="Del" class=" red small white-text top-margin">
-          <input type="button" name="" value="=" class=" green white-text big top-margin">
-        </div>
-        <div class="right">
-          <input type="button" name="" value="+" class="global grey plus">
-        </div>
-      </div>
+<div class="container">
+  <div class="header">Calculator</div>
+  <input type="text" id="result" class="result">
+  <div class="first-row">
+    <input type="button" value="√" onclick="appendText(this.value)">
+    <input type="button" value="(" onclick="appendText(this.value)">
+    <input type="button" value=")" onclick="appendText(this.value)">
+    <input type="button" value="%" onclick="appendText(this.value)">
+  </div>
+  <div class="second-row">
+    <input type="button" value="7" onclick="appendText(this.value)">
+    <input type="button" value="8" onclick="appendText(this.value)">
+    <input type="button" value="9" onclick="appendText(this.value)">
+    <input type="button" value="/" onclick="appendText(this.value)">
+  </div>
+  <div class="third-row">
+    <input type="button" value="4" onclick="appendText(this.value)">
+    <input type="button" value="5" onclick="appendText(this.value)">
+    <input type="button" value="6" onclick="appendText(this.value)">
+    <input type="button" value="*" onclick="appendText(this.value)">
+  </div>
+  <div class="fourth-row">
+    <input type="button" value="1" onclick="appendText(this.value)">
+    <input type="button" value="2" onclick="appendText(this.value)">
+    <input type="button" value="3" onclick="appendText(this.value)">
+    <input type="button" value="-" onclick="appendText(this.value)">
+  </div>
+  <div class="conflict">
+    <div class="left">
+      <input type="button" value="0" onclick="appendText(this.value)" class="big">
+      <input type="button" value="." onclick="appendText(this.value)" class="small">
+      <input type="button" value="Del" onclick="deleteLastCharacter()" class="red small white-text top-margin">
+      <input type="button" value="=" onclick="calculate()" class="green white-text big top-margin">
     </div>
+    <div class="right">
+      <input type="button" value="+" onclick="appendText(this.value)" class="global grey plus">
+    </div>
+  </div>
+</div>
+
+<script>
+  function appendText(value) {
+    document.getElementById("result").value += value;
+  }
+
+  function deleteLastCharacter() {
+    var result = document.getElementById("result");
+    result.value = result.value.slice(0, -1);
+  }
+
+  function calculate() {
+    var result = document.getElementById("result");
+    var expression = result.value;
+
+    try {
+      var resultValue = eval(expression);
+      result.value = resultValue;
+    } catch (error) {
+      // Handle any potential errors during evaluation
+      console.error(error);
+      result.value = "Error";
+    }
+  }
+</script>
