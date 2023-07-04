@@ -14,8 +14,6 @@ h1 {
   width: 25%;
   padding: 10px;
   border: 1px solid #f2f2f2;
-  -webkit-box-shadow: 1px 1px 4px 0px rgba(176, 176, 176, 1);
-  -moz-box-shadow: 1px 1px 4px 0px rgba(176, 176, 176, 1);
   box-shadow: 1px 1px 4px 0px rgba(176, 176, 176, 1);
   background-color: #fff;
   height: 450px;
@@ -49,7 +47,7 @@ h1 {
 }
 
 .global {
-  padding: 15px;
+  padding: 20px;
   font-weight: bold;
   font-size: 16px;
   border: none;
@@ -73,7 +71,7 @@ h1 {
 }
 
 .big {
-  padding: 15px;
+  padding: 20px;
   font-weight: bold;
   font-size: 16px;
   border: none;
@@ -84,7 +82,7 @@ h1 {
 }
 
 .small {
-  padding: 15px;
+  padding: 20px;
   font-weight: bold;
   font-size: 16px;
   border: none;
